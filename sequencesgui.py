@@ -8,7 +8,7 @@ import mplcursors
 class GraphGui(Sequences):
     def make_graph(self, sequence: list) -> plt.plot:
         plt.style.use('seaborn-darkgrid')
-        xticks = [num for num in range(len(sequence) + 1)]
+        xticks = [num for num in range(0, len(sequence) + 1, 5)]
         
         root = tk.Tk()
         root.wm_title('Sequences Plot')
@@ -22,6 +22,7 @@ class GraphGui(Sequences):
         ax.set_xticks(xticks)
         ax.set_xlabel('Cycle', color = 'white')
         ax.set_ylabel('Value', color = 'white')
+        ax.format_coord = lambda x, y: f'Cycle: {x:.0f}, Value: {y:.0f}'
         marker = ax.plot(sequence, color = 'black', marker = 'o', markerfacecolor = 'silver')
         
         canvas = FigureCanvasTkAgg(fig, master=root)
@@ -40,4 +41,4 @@ class GraphGui(Sequences):
 if __name__ == '__main__':
     bailey = GraphGui()
 
-    print(bailey.make_graph(bailey.collatz(15)))
+    print(bailey.make_graph(bailey.lazy_caterer(100)))
