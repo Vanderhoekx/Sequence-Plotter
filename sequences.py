@@ -49,7 +49,7 @@ class Sequences(queueprog.Queue, helpers.Helpers):
 
     def lazy_caterer(self, n: int) -> list:
         '''it describes the maximum number of pieces of a circle that can be made with a given number of straight cuts'''
-        return [(num ** 2 + num + 2) // 2 for num in range(n + 1)]
+        return [(num ** 2 + num + 2) // 2 for num in range(1, n + 1)]
 
     def magic_squares(self, n: int) -> list:
         return [num * (num ** 2 + 1) // 2 for num in range(n + 1)]
