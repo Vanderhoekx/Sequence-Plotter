@@ -27,6 +27,7 @@ class Sequences(queueprog.Queue, helpers.Helpers):
         return self.rec_items
 
     def fib(self, n: int) -> list:
+        '''The Fibonacci Sequence'''
         return [self._fib_calc(num) for num in range(1, n + 1)]
     
     def square_nums(self, n: int) -> list:
