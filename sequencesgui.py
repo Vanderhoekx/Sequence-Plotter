@@ -52,7 +52,7 @@ if __name__ == '__main__':
         for key, value in x.items():
             print(key)
     
-    elif len(sys.argv) < 2:
+    elif len(sys.argv) != 3:
         print('Usage: python sequencesgui.py <sequence> <value>')
         print('for sequence choices type: python sequencesgui.py -h')
     
@@ -60,4 +60,3 @@ if __name__ == '__main__':
         val_choice = int(sys.argv[2])
         seq_choice = sys.argv[1]
         bailey.make_graph(x[seq_choice](val_choice))
-        
