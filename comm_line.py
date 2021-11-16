@@ -14,8 +14,8 @@ if len(sys.argv) == 2 and sys.argv[1] == '-h':
         print(key)
 
 elif len(sys.argv) != 3:
-    print('Usage: python sequencesgui.py <sequence> <value>')
-    print('for sequence choices type: python sequencesgui.py -h')
+    print('Usage: python comm_line.py <sequence> <value>')
+    print('for sequence choices type: python comm_line.py -h')
 
 elif len(sys.argv) == 3:
     val_choice = int(sys.argv[2])
