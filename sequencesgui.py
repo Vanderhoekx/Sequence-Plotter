@@ -6,15 +6,15 @@ from matplotlib.figure import Figure
 import mplcursors
 
 class GraphGui(Sequences):
-    def __init__(self):
-        self.curr_seq = 'Collatz'
+    def __init__(self, curr_seq = 'Collatz'):
+        self.curr_seq = curr_seq
         self.make_graph(self.collatz(15))
         self.sequence_window = tk.Tk()
 
     def make_graph(self, sequence: list) -> plt.plot:
         plt.style.use('seaborn-darkgrid')
         
-        xticks = [num for num in range(1, len(sequence) + 1, 5)]
+        xticks = [num for num in range(1, len(sequence) + 1, 2)]
         self.root = tk.Tk()
         self.sequence_window = tk.Tk()
         
@@ -37,8 +37,6 @@ class GraphGui(Sequences):
         seq_menu.pack(side = tk.TOP, fill = tk.BOTH, pady = 20)
         
         self.value_ent = tk.Entry(buttons_frame, textvariable = self.ent_var)
-        
-        self.value_ent.insert(0, 'Enter Value')
         self.value_ent.pack(side = tk.TOP, pady = 20)
         
         buttons_frame.pack(fill = tk.BOTH, expand = 1)
