@@ -8,7 +8,7 @@ import mplcursors
 class GraphGui(Sequences):
     def __init__(self, curr_seq = 'Collatz'):
         self.curr_seq = curr_seq
-        self.make_graph(self.collatz(15))
+        #self.make_graph(self.collatz(15))
         self.sequence_window = tk.Tk()
 
     def make_graph(self, sequence: list) -> plt.plot:
@@ -79,4 +79,7 @@ class GraphGui(Sequences):
         self.curr_seq = sequence_dict[event]
         self.make_graph(self.curr_seq(self.get_value()))
         
-bailey = GraphGui()
+
+if __name__ == '__main__':
+    bailey = GraphGui()
+    bailey.make_graph(bailey.collatz(15))
